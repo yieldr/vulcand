@@ -1,0 +1,28 @@
+box: golang
+
+build:
+  steps:
+    - setup-go-workspace:
+        package-dir: github.com/yieldr/vulcand
+    - script:
+        name: go build
+        code: |
+          make build OS=linux ARCH=amd64
+    - script:
+        name: go test
+        code: |
+          go test
+    - script:
+        name: copy binaries
+        code: |
+          cp bin/* $WERCKER_OUTPUT_DIR
+release:
+  steps:
+    - internal/docker-scratch-push:
+        username: $REGISTRY_USERNAME
+        password: $REGISTRY_PASSWORD
+        repository: yieldr/vulcand
+        cmd: /vulcand
+        tag: latest,sha-$WERCKER_GIT_COMMIT,$WERCKER_GIT_BRANCH
+        ports: 8181,8182
+        author: $WERCKER_STARTED_BY
