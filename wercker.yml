@@ -25,7 +25,7 @@ release:
           if [[ "$WERCKER_GIT_BRANCH" = "master" ]]; then
             TAG="latest"
           elif [[ $WERCKER_GIT_BRANCH == *"release/"* ]]; then
-            TAG="latest,$(cut -d "/" -f 2 <<< $WERCKER_GIT_BRANCH)"
+            TAG="latest,r$(cut -d "/" -f 2 <<< $WERCKER_GIT_BRANCH)"
           fi
           export TAG
     - internal/docker-scratch-push:
