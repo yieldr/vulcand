@@ -1,0 +1,804 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "dAA8PW3uJcFhdSfglb+J+ovCqXM=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/armon/go-proxyproto",
+			"path": "github.com/armon/go-proxyproto",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "spyv5/YFBjYyZLZa1U2LBfDR8PM=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/beorn7/perks/quantile",
+			"path": "github.com/beorn7/perks/quantile",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "hNIY5fst/Bxojlcb5EnWZUVT0BE=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/bshuster-repo/logrus-logstash-hook",
+			"path": "github.com/bshuster-repo/logrus-logstash-hook",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "XDJNy+rDlr63qejinXjdV7Wdilg=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/buger/goterm",
+			"path": "github.com/buger/goterm",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "7gK+lSShSu1NRw83/A95BcgMqsI=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/codahale/hdrhistogram",
+			"path": "github.com/codahale/hdrhistogram",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "DIhhLfId4jP1kWUBkcuSM3NMmZc=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/codegangsta/cli",
+			"path": "github.com/codegangsta/cli",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "7uspQtEpYuBxaxrBTcxa+ZfiuJo=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/coreos/etcd/auth/authpb",
+			"path": "github.com/coreos/etcd/auth/authpb",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "7UA5xypGCK2rsrcAf3udKkwOkJM=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/coreos/etcd/client",
+			"path": "github.com/coreos/etcd/client",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "U68fyOCzP9MjSZ/yTcqIm/aSHFw=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/coreos/etcd/clientv3",
+			"path": "github.com/coreos/etcd/clientv3",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "5yRlK3cXaDLqOQGtE5oGgKW9+zI=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/coreos/etcd/etcdserver/api/v3rpc/rpctypes",
+			"path": "github.com/coreos/etcd/etcdserver/api/v3rpc/rpctypes",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "Vu09CLLQRRgKmh4nRXk5dq9uQ3w=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/coreos/etcd/etcdserver/etcdserverpb",
+			"path": "github.com/coreos/etcd/etcdserver/etcdserverpb",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "PAnQN6F8iZuIfu9HHOORyVFaaOA=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/coreos/etcd/mvcc/mvccpb",
+			"path": "github.com/coreos/etcd/mvcc/mvccpb",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "mKIXx1kDwmVmdIpZ3pJtRBuUKso=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/coreos/etcd/pkg/pathutil",
+			"path": "github.com/coreos/etcd/pkg/pathutil",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "rMyIh9PsSvPs6Yd+YgKITQzQJx8=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/coreos/etcd/pkg/tlsutil",
+			"path": "github.com/coreos/etcd/pkg/tlsutil",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "gx1gJIMU6T0UNQ0bPZ/drQ8cpCI=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/coreos/etcd/pkg/types",
+			"path": "github.com/coreos/etcd/pkg/types",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "muGVyM8mY3/gcap6kr4Ib3F5Xn4=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/ghodss/yaml",
+			"path": "github.com/ghodss/yaml",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "APDDi2ohrU7OkChQCekD9tSVUhs=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/golang/protobuf/jsonpb",
+			"path": "github.com/golang/protobuf/jsonpb",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "kBeNcaKk56FguvPSUCEaH6AxpRc=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/golang/protobuf/proto",
+			"path": "github.com/golang/protobuf/proto",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "iIUYZyoanCQQTUaWsu8b+iOSPt4=",
+			"path": "github.com/gorilla/context",
+			"revision": "1c83b3eabd45b6d76072b66b746c20815fb2872d",
+			"revisionTime": "2015-08-20T05:12:45Z"
+		},
+		{
+			"checksumSHA1": "urMd7A9QPAJYY0GZJL9qBhlUmD8=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/gorilla/mux",
+			"path": "github.com/gorilla/mux",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "ucTBCc7dDRKLGPsYfAzu/Gq63qA=",
+			"path": "github.com/gorilla/securecookie",
+			"revision": "e59506cc896acb7f7bf732d4fdf5e25f7ccd8983",
+			"revisionTime": "2017-02-24T19:38:04Z"
+		},
+		{
+			"checksumSHA1": "dxwmtflRNX8Q+gtB5EchmMwFnpQ=",
+			"path": "github.com/gorilla/sessions",
+			"revision": "b61c93cb7f67533c8bfbb5ea450efc07e5833c5e",
+			"revisionTime": "2017-08-02T14:17:18Z"
+		},
+		{
+			"checksumSHA1": "OJPSJ4GBgH/XOFtYu2VM1g7rtjk=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/grpc-ecosystem/go-grpc-prometheus",
+			"path": "github.com/grpc-ecosystem/go-grpc-prometheus",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "LoEQ+t5UoMm4InaYVPVn0XqHPwA=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/grpc-ecosystem/grpc-gateway/runtime",
+			"path": "github.com/grpc-ecosystem/grpc-gateway/runtime",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "x396LPNfci/5x8aVJbliQHH11HQ=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/grpc-ecosystem/grpc-gateway/runtime/internal",
+			"path": "github.com/grpc-ecosystem/grpc-gateway/runtime/internal",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "vqiK5r5dntV7JNZ+ZsGlD0Samos=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/grpc-ecosystem/grpc-gateway/utilities",
+			"path": "github.com/grpc-ecosystem/grpc-gateway/utilities",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "1KsMcPINC/mNRbos9T1ZCXM1MH8=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/mailgun/metrics",
+			"path": "github.com/mailgun/metrics",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "So3Zh+/VArgLhtP/By9OeQyELDM=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/mailgun/minheap",
+			"path": "github.com/mailgun/minheap",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "3YyGyWFaO2B+uaFE57ghJZtYowA=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/mailgun/multibuf",
+			"path": "github.com/mailgun/multibuf",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "5i96y94WlWuDTIjO+oHX4QXFrJE=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/mailgun/timetools",
+			"path": "github.com/mailgun/timetools",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "/rSp8w2z1YISh1jnLu76goBs1K0=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/mailgun/ttlmap",
+			"path": "github.com/mailgun/ttlmap",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "bKMZjd2wPw13VwoE7mBeSv5djFA=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/matttproud/golang_protobuf_extensions/pbutil",
+			"path": "github.com/matttproud/golang_protobuf_extensions/pbutil",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "ynJSWoF6v+3zMnh9R0QmmG6iGV8=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/pkg/errors",
+			"path": "github.com/pkg/errors",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "/j0HRFJPThv7HEkZZ/gurf+5fQI=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/prometheus/client_golang/prometheus",
+			"path": "github.com/prometheus/client_golang/prometheus",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "DvwvOlPNAgRntBzt3b3OSRMS2N4=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/prometheus/client_model/go",
+			"path": "github.com/prometheus/client_model/go",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "mHyjbJ3BWOfUV6q9f5PBt0gaY1k=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/prometheus/common/expfmt",
+			"path": "github.com/prometheus/common/expfmt",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "GWlM3d2vPYyNATtTFgftS10/A9w=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/prometheus/common/internal/bitbucket.org/ww/goautoneg",
+			"path": "github.com/prometheus/common/internal/bitbucket.org/ww/goautoneg",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "vopCLXHzYm+3l5fPKOf4/fQwrCM=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/prometheus/common/model",
+			"path": "github.com/prometheus/common/model",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "L+p4t3KrLDAKJnrreOz2BZIt9Mg=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/prometheus/procfs",
+			"path": "github.com/prometheus/procfs",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "BYvROBsiyAXK4sq6yhDe8RgT4LM=",
+			"path": "github.com/sirupsen/logrus",
+			"revision": "89742aefa4b206dcf400792f3bd35b542998eb3b",
+			"revisionTime": "2017-08-22T13:27:46Z"
+		},
+		{
+			"checksumSHA1": "Xl1z9/GxSKSXE0qSr4h7Fdusp3I=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/sirupsen/logrus/hooks/syslog",
+			"path": "github.com/sirupsen/logrus/hooks/syslog",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "+ajZXCpD7wIHE4F9jD8/tO+shBo=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/ugorji/go/codec",
+			"path": "github.com/ugorji/go/codec",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "GSmLck27q9xaVimD6nvRtbCcS78=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/vulcand/oxy/buffer",
+			"path": "github.com/vulcand/oxy/buffer",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "RJ1fxFjNb7bpXgM8KatX7/mQQ6A=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/vulcand/oxy/cbreaker",
+			"path": "github.com/vulcand/oxy/cbreaker",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "Kg6JiO1nlBNnMYcD//GbLCMDEyI=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/vulcand/oxy/connlimit",
+			"path": "github.com/vulcand/oxy/connlimit",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "Ys8zVlO3Z089fR8iv1N6DbTUrQQ=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/vulcand/oxy/forward",
+			"path": "github.com/vulcand/oxy/forward",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "ZciUfQ/vdh19UZTiaG6/NNkVMv8=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/vulcand/oxy/memmetrics",
+			"path": "github.com/vulcand/oxy/memmetrics",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "rXLI1dSRLvciidIG1P2lnhOk9qA=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/vulcand/oxy/ratelimit",
+			"path": "github.com/vulcand/oxy/ratelimit",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "vWHe4ETZERKMHIDNXfTDfYErrfA=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/vulcand/oxy/roundrobin",
+			"path": "github.com/vulcand/oxy/roundrobin",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "LDmwPUC0nTwzKQ7n0AAwKZNYuhI=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/vulcand/oxy/stream",
+			"path": "github.com/vulcand/oxy/stream",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "p8Qk9pyK24lIJ0gppri7IgPWYog=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/vulcand/oxy/trace",
+			"path": "github.com/vulcand/oxy/trace",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "xTeYP1WNzh3gqTngpjqDKuRhswo=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/vulcand/oxy/utils",
+			"path": "github.com/vulcand/oxy/utils",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "PZosarnMLgBIfES0GX8sPcluqIM=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/vulcand/predicate",
+			"path": "github.com/vulcand/predicate",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "nMYb2AGwxMfPDs7U6WIwQCWKEq0=",
+			"origin": "github.com/vulcand/vulcand/vendor/github.com/vulcand/route",
+			"path": "github.com/vulcand/route",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "DCcpAMqeO8ux0O1FEtWTuu+/peo=",
+			"path": "github.com/vulcand/vulcand/anomaly",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "YBJ6HiZiHOOddKbvYLf9HJyA9sE=",
+			"path": "github.com/vulcand/vulcand/api",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "fGTi3bz6/2/Q+2ghjRbuSM/mQT4=",
+			"path": "github.com/vulcand/vulcand/conntracker",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "c0ouepUKlimSUEesP0But1FL00I=",
+			"path": "github.com/vulcand/vulcand/engine",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "ToTEOkKpsbSHYludw8ed8KV/+2M=",
+			"path": "github.com/vulcand/vulcand/engine/etcdv2ng",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "+Np/+nfFMjXmyfIurU6Tacdfu2M=",
+			"path": "github.com/vulcand/vulcand/engine/etcdv3ng",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "Lxgf4QXNAzKb3gbysFA4fM1PlFo=",
+			"path": "github.com/vulcand/vulcand/graceful",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "CwR9RQb8q2IEMdWlux4u/DZmhyk=",
+			"path": "github.com/vulcand/vulcand/plugin",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "YDIpP02GEmR0exXrqaxn12wdB48=",
+			"path": "github.com/vulcand/vulcand/plugin/cbreaker",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "LAfUtpYcJbI5A/UhUxN56brBftE=",
+			"path": "github.com/vulcand/vulcand/plugin/connlimit",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "K1ialKgoaUhQV4xGMMYEM+gpvUE=",
+			"path": "github.com/vulcand/vulcand/plugin/ratelimit",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "f4FeLN4b6pvXNXUzOjw3tlBVLVc=",
+			"path": "github.com/vulcand/vulcand/plugin/rewrite",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "vtPKxJojqDxldUiEs70kt3LkxFo=",
+			"path": "github.com/vulcand/vulcand/plugin/trace",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "fbh69a26Un6mHOgfhMgExNMzIoU=",
+			"path": "github.com/vulcand/vulcand/proxy",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "bjCe0cVC5k76h26V8Ya0PjiJuKI=",
+			"path": "github.com/vulcand/vulcand/proxy/backend",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "P6zM3FkJNgfCZdEgahpWoJrQGP0=",
+			"path": "github.com/vulcand/vulcand/proxy/builder",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "LdxCthNNV8a8kMUFNJDt4f5i46w=",
+			"path": "github.com/vulcand/vulcand/proxy/connctr",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "tZJWwEidKk+9UdQKOmluM0K5vck=",
+			"path": "github.com/vulcand/vulcand/proxy/frontend",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "vPDm1lOX4t10JYOUQPZEjNDQNVc=",
+			"path": "github.com/vulcand/vulcand/proxy/mux",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "QTDBuQI0d9srxKwRjjkbDU6/P/c=",
+			"path": "github.com/vulcand/vulcand/proxy/rtmcollect",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "gb3a2b5wFGGYn+25My8QnXGiqNg=",
+			"path": "github.com/vulcand/vulcand/proxy/server",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "wqfz1a9XpOB7/4Ksx1kjjvhetQU=",
+			"path": "github.com/vulcand/vulcand/router",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "mRW8TGT+sTUHjbY3nW3+Ixl8DQk=",
+			"path": "github.com/vulcand/vulcand/secret",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "1Tx5dI4xxYMueCrnJYR9Mwz1+3A=",
+			"path": "github.com/vulcand/vulcand/service",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "N8giUzJlPa0/kMVePw9dzMBKKb8=",
+			"path": "github.com/vulcand/vulcand/stapler",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "UuJ1scspSCUzsrj3c7jH5Fpn5No=",
+			"path": "github.com/vulcand/vulcand/supervisor",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "4EgXjjdsZrPtCYjEwleyp2VM7O4=",
+			"path": "github.com/vulcand/vulcand/utils/json",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "4d7HzNabhGggd54a1b3guhoXHuk=",
+			"path": "github.com/vulcand/vulcand/vctl/command",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "2oRV/saIbmmwAkRRMsamVy7kCqU=",
+			"origin": "github.com/vulcand/vulcand/vendor/golang.org/x/crypto/nacl/secretbox",
+			"path": "golang.org/x/crypto/nacl/secretbox",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "R70JsDOKr/kg1WxDHhDG5vHWndQ=",
+			"origin": "github.com/vulcand/vulcand/vendor/golang.org/x/crypto/ocsp",
+			"path": "golang.org/x/crypto/ocsp",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "WZH+2nW01qMOzN3E93vwNrHqHQY=",
+			"origin": "github.com/vulcand/vulcand/vendor/golang.org/x/crypto/poly1305",
+			"path": "golang.org/x/crypto/poly1305",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "OAvOUFsItGa5c4GOfhCCtd1B0mg=",
+			"origin": "github.com/vulcand/vulcand/vendor/golang.org/x/crypto/salsa20/salsa",
+			"path": "golang.org/x/crypto/salsa20/salsa",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "bA2gANkJBx2Br/p5GKYdhyGo3Pg=",
+			"origin": "github.com/vulcand/vulcand/vendor/golang.org/x/crypto/ssh/terminal",
+			"path": "golang.org/x/crypto/ssh/terminal",
+			"revision": "c8b9e6388ef638d5a8a9d865c634befdc46a6784",
+			"revisionTime": "2015-06-19T00:47:17Z"
+		},
+		{
+			"checksumSHA1": "jmDEnHmGflXf/8uGh9ph9DE+48Y=",
+			"origin": "github.com/vulcand/vulcand/vendor/golang.org/x/net/context",
+			"path": "golang.org/x/net/context",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "WHc3uByvGaMcnSoI21fhzYgbOgg=",
+			"path": "golang.org/x/net/context/ctxhttp",
+			"revision": "a04bdaca5b32abe1c069418fb7088ae607de5bd0",
+			"revisionTime": "2017-10-03T05:09:24Z"
+		},
+		{
+			"checksumSHA1": "QOD116KoRQ1RMes5SSDKUpjU7sU=",
+			"origin": "github.com/vulcand/vulcand/vendor/golang.org/x/net/http2",
+			"path": "golang.org/x/net/http2",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "HzuGD7AwgC0p1az1WAQnEFnEk98=",
+			"origin": "github.com/vulcand/vulcand/vendor/golang.org/x/net/http2/hpack",
+			"path": "golang.org/x/net/http2/hpack",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "gXiSniT8fevWOVPVKopYgrdzi60=",
+			"origin": "github.com/vulcand/vulcand/vendor/golang.org/x/net/idna",
+			"path": "golang.org/x/net/idna",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "AQ7xmQRSqJi9M7JsqqW3pAsjKTI=",
+			"origin": "github.com/vulcand/vulcand/vendor/golang.org/x/net/internal/timeseries",
+			"path": "golang.org/x/net/internal/timeseries",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "3xyuaSNmClqG4YWC7g0isQIbUTc=",
+			"origin": "github.com/vulcand/vulcand/vendor/golang.org/x/net/lex/httplex",
+			"path": "golang.org/x/net/lex/httplex",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "v3BKWMMlG25vXwBynVRbK8lmrsE=",
+			"origin": "github.com/vulcand/vulcand/vendor/golang.org/x/net/trace",
+			"path": "golang.org/x/net/trace",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "HmVJmSDDCwsPJQrp7ml2gXb2szg=",
+			"path": "golang.org/x/oauth2",
+			"revision": "bb50c06baba3d0c76f9d125c0719093e315b5b44",
+			"revisionTime": "2017-09-28T00:25:42Z"
+		},
+		{
+			"checksumSHA1": "4XCNzl3cgGtdd0SrUZHSBdsW+m4=",
+			"path": "golang.org/x/oauth2/internal",
+			"revision": "bb50c06baba3d0c76f9d125c0719093e315b5b44",
+			"revisionTime": "2017-09-28T00:25:42Z"
+		},
+		{
+			"checksumSHA1": "vu7njn8O4vhFtmgGWntwjA2NAbk=",
+			"origin": "github.com/vulcand/vulcand/vendor/golang.org/x/sys/unix",
+			"path": "golang.org/x/sys/unix",
+			"revision": "8f0908ab3b2457e2e15403d3697c9ef5cb4b57a9",
+			"revisionTime": "2016-09-14T20:33:16Z"
+		},
+		{
+			"checksumSHA1": "fpW2dhGFC6SrVzipJx7fjg2DIH8=",
+			"path": "golang.org/x/sys/windows",
+			"revision": "8f0908ab3b2457e2e15403d3697c9ef5cb4b57a9",
+			"revisionTime": "2016-09-14T20:33:16Z"
+		},
+		{
+			"checksumSHA1": "kfslaLecTWjN5Nrm/RqxgwXvgeY=",
+			"path": "google.golang.org/appengine/internal",
+			"revision": "6bde959377a90acb53366051d7d587bfd7171354",
+			"revisionTime": "2016-01-11T05:01:37Z"
+		},
+		{
+			"checksumSHA1": "TsNO8P0xUlLNyh3Ic/tzSp/fDWM=",
+			"path": "google.golang.org/appengine/internal/base",
+			"revision": "6bde959377a90acb53366051d7d587bfd7171354",
+			"revisionTime": "2016-01-11T05:01:37Z"
+		},
+		{
+			"checksumSHA1": "5QsV5oLGSfKZqTCVXP6NRz5T4Tw=",
+			"path": "google.golang.org/appengine/internal/datastore",
+			"revision": "6bde959377a90acb53366051d7d587bfd7171354",
+			"revisionTime": "2016-01-11T05:01:37Z"
+		},
+		{
+			"checksumSHA1": "Gep2T9zmVYV8qZfK2gu3zrmG6QE=",
+			"path": "google.golang.org/appengine/internal/log",
+			"revision": "6bde959377a90acb53366051d7d587bfd7171354",
+			"revisionTime": "2016-01-11T05:01:37Z"
+		},
+		{
+			"checksumSHA1": "a1XY7rz3BieOVqVI2Et6rKiwQCk=",
+			"path": "google.golang.org/appengine/internal/remote_api",
+			"revision": "6bde959377a90acb53366051d7d587bfd7171354",
+			"revisionTime": "2016-01-11T05:01:37Z"
+		},
+		{
+			"checksumSHA1": "QtAbHtHmDzcf6vOV9eqlCpKgjiw=",
+			"path": "google.golang.org/appengine/internal/urlfetch",
+			"revision": "6bde959377a90acb53366051d7d587bfd7171354",
+			"revisionTime": "2016-01-11T05:01:37Z"
+		},
+		{
+			"checksumSHA1": "akOV9pYnCbcPA8wJUutSQVibdyg=",
+			"path": "google.golang.org/appengine/urlfetch",
+			"revision": "6bde959377a90acb53366051d7d587bfd7171354",
+			"revisionTime": "2016-01-11T05:01:37Z"
+		},
+		{
+			"checksumSHA1": "1Tk01WymSXxdXfVx39dyN2ofwGM=",
+			"origin": "github.com/vulcand/vulcand/vendor/google.golang.org/grpc",
+			"path": "google.golang.org/grpc",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "0XQmTkRqSo/CN8WhuwbKo/PLQKI=",
+			"origin": "github.com/vulcand/vulcand/vendor/google.golang.org/grpc/codes",
+			"path": "google.golang.org/grpc/codes",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "vC7RUIAm8po/0EBe4j5SbH43bcA=",
+			"origin": "github.com/vulcand/vulcand/vendor/google.golang.org/grpc/credentials",
+			"path": "google.golang.org/grpc/credentials",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "pGs9ZeNwE/zzIa8tZEmCgbLAZZ4=",
+			"origin": "github.com/vulcand/vulcand/vendor/google.golang.org/grpc/grpclog",
+			"path": "google.golang.org/grpc/grpclog",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "T3Q0p8kzvXFnRkMaK/G8mCv6mc0=",
+			"origin": "github.com/vulcand/vulcand/vendor/google.golang.org/grpc/internal",
+			"path": "google.golang.org/grpc/internal",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "Y1Nre//9NOEp4AqGbLx6VnHsg2Y=",
+			"origin": "github.com/vulcand/vulcand/vendor/google.golang.org/grpc/metadata",
+			"path": "google.golang.org/grpc/metadata",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "4GSUFhOQ0kdFlBH4D5OTeKy78z0=",
+			"origin": "github.com/vulcand/vulcand/vendor/google.golang.org/grpc/naming",
+			"path": "google.golang.org/grpc/naming",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "3RRoLeH6X2//7tVClOVzxW2bY+E=",
+			"origin": "github.com/vulcand/vulcand/vendor/google.golang.org/grpc/peer",
+			"path": "google.golang.org/grpc/peer",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "JLSI9PO3nCahtenmRFwnKCijZb0=",
+			"origin": "github.com/vulcand/vulcand/vendor/google.golang.org/grpc/stats",
+			"path": "google.golang.org/grpc/stats",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "N0TftT6/CyWqp6VRi2DqDx60+Fo=",
+			"origin": "github.com/vulcand/vulcand/vendor/google.golang.org/grpc/tap",
+			"path": "google.golang.org/grpc/tap",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "pc2/5/oV3pFjP6LzxyTzqEjWDJo=",
+			"origin": "github.com/vulcand/vulcand/vendor/google.golang.org/grpc/transport",
+			"path": "google.golang.org/grpc/transport",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "YsB2DChSV9HxdzHaKATllAUKWSI=",
+			"origin": "github.com/vulcand/vulcand/vendor/gopkg.in/mgo.v2/bson",
+			"path": "gopkg.in/mgo.v2/bson",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "XQsrqoNT1U0KzLxOFcAZVvqhLfk=",
+			"origin": "github.com/vulcand/vulcand/vendor/gopkg.in/mgo.v2/internal/json",
+			"path": "gopkg.in/mgo.v2/internal/json",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "12GqsW8PiRPnezDDy0v4brZrndM=",
+			"origin": "github.com/vulcand/vulcand/vendor/gopkg.in/yaml.v2",
+			"path": "gopkg.in/yaml.v2",
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
+		}
+	],
+	"rootPath": "github.com/yieldr/vulcand"
+}
