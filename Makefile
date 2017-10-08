@@ -19,16 +19,6 @@ install:
 test:
 	go test
 
-configure:
-	vctl backend upsert -id nginx
-	vctl server upsert -b nginx -id nginx-1 -url http://nginx:80
-	vctl frontend upsert -id nginx -b nginx -route 'PathRegexp("/.*")'
-	vctl oauth2 upsert -f nginx -id nginx-oauth \
-		-domain yieldr.eu.auth0.com \
-		-clientId JklNORC4LOPSotjX25sZVcam6ZWpM53f \
-		-clientSecret Pu0kl30h4ut7pFh5baczOhLlyCpBv-pm9iQOKFsVEsVdeUgEGlh4RY0zeknl4oUx \
-		-redirectUrl http://localhost:8181/callback
-
 docker-all: docker-build docker-image docker-push
 
 docker-build:

@@ -3,6 +3,12 @@
 	"ignore": "test",
 	"package": [
 		{
+			"checksumSHA1": "/D9yE1GARFE0MqESFkwONd/BsGo=",
+			"path": "github.com/alexkappa/errors",
+			"revision": "ebbb2e5061e97742fcb6154fd41837680d1c9633",
+			"revisionTime": "2017-08-04T12:13:56Z"
+		},
+		{
 			"checksumSHA1": "dAA8PW3uJcFhdSfglb+J+ovCqXM=",
 			"origin": "github.com/vulcand/vulcand/vendor/github.com/armon/go-proxyproto",
 			"path": "github.com/armon/go-proxyproto",
@@ -108,6 +114,13 @@
 			"revisionTime": "2017-09-30T15:01:53Z"
 		},
 		{
+			"checksumSHA1": "5rPfda8jFccr3A6heL+JAmi9K9g=",
+			"origin": "github.com/stretchr/testify/vendor/github.com/davecgh/go-spew/spew",
+			"path": "github.com/davecgh/go-spew/spew",
+			"revision": "6fe211e493929a8aac0469b93f28b1d0688a9a3a",
+			"revisionTime": "2016-03-05T16:54:46Z"
+		},
+		{
 			"checksumSHA1": "muGVyM8mY3/gcap6kr4Ib3F5Xn4=",
 			"origin": "github.com/vulcand/vulcand/vendor/github.com/ghodss/yaml",
 			"path": "github.com/ghodss/yaml",
@@ -182,6 +195,12 @@
 			"revisionTime": "2017-09-30T15:01:53Z"
 		},
 		{
+			"checksumSHA1": "mVqMH3vk9WteabEcyofu2fOK1gQ=",
+			"path": "github.com/mailgun/log",
+			"revision": "2f35a4607f1abf71f97f77f99b0de8493ef6f4ef",
+			"revisionTime": "2015-09-26T00:09:44Z"
+		},
+		{
 			"checksumSHA1": "1KsMcPINC/mNRbos9T1ZCXM1MH8=",
 			"origin": "github.com/vulcand/vulcand/vendor/github.com/mailgun/metrics",
 			"path": "github.com/mailgun/metrics",
@@ -224,11 +243,24 @@
 			"revisionTime": "2017-09-30T15:01:53Z"
 		},
 		{
+			"checksumSHA1": "EXcR0OMFiPidNCTiT5ZCmXgCSJE=",
+			"path": "github.com/patrickmn/go-cache",
+			"revision": "721cc9438c91df8997d39584a6740e2aba3100a7",
+			"revisionTime": "2015-12-03T14:55:58Z"
+		},
+		{
 			"checksumSHA1": "ynJSWoF6v+3zMnh9R0QmmG6iGV8=",
 			"origin": "github.com/vulcand/vulcand/vendor/github.com/pkg/errors",
 			"path": "github.com/pkg/errors",
 			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
 			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "zKKp5SZ3d3ycKe4EKMNT0BqAWBw=",
+			"origin": "github.com/stretchr/testify/vendor/github.com/pmezard/go-difflib/difflib",
+			"path": "github.com/pmezard/go-difflib/difflib",
+			"revision": "6fe211e493929a8aac0469b93f28b1d0688a9a3a",
+			"revisionTime": "2016-03-05T16:54:46Z"
 		},
 		{
 			"checksumSHA1": "/j0HRFJPThv7HEkZZ/gurf+5fQI=",
@@ -284,6 +316,12 @@
 			"path": "github.com/sirupsen/logrus/hooks/syslog",
 			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
 			"revisionTime": "2017-09-30T15:01:53Z"
+		},
+		{
+			"checksumSHA1": "Bn333k9lTndxU3D6n/G5c+GMcYY=",
+			"path": "github.com/stretchr/testify/assert",
+			"revision": "6fe211e493929a8aac0469b93f28b1d0688a9a3a",
+			"revisionTime": "2016-03-05T16:54:46Z"
 		},
 		{
 			"checksumSHA1": "+ajZXCpD7wIHE4F9jD8/tO+shBo=",

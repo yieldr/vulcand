@@ -109,6 +109,7 @@ func (o *OAuth2Handler) Callback(w http.ResponseWriter, r *http.Request) {
 	}
 
 	s.Values["access_token"] = t.AccessToken
+	s.Values["id_token"] = t.Extra("id_token")
 
 	if err = s.Save(r, w); err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
