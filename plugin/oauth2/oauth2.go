@@ -1,6 +1,7 @@
 package oauth2
 
 import (
+	"fmt"
 	"net/http"
 	"net/url"
 
@@ -74,6 +75,16 @@ func (o *OAuth2) NewHandler(next http.Handler) (http.Handler, error) {
 		conf: o,
 		next: next,
 	}), nil
+}
+
+func (o *OAuth2) String() string {
+	return fmt.Sprintf(
+		"domain=%s, client-id=%s client-secret=%s redirect=%s",
+		o.Domain,
+		o.ClientID,
+		o.ClientSecret,
+		o.RedirectURL,
+	)
 }
 
 type OAuth2Handler struct {
