@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"net/url"
 
+	"github.com/alexkappa/errors"
 	"github.com/codegangsta/cli"
 	"github.com/gorilla/context"
 	"github.com/gorilla/securecookie"
@@ -29,7 +30,7 @@ func GetSpec() *plugin.MiddlewareSpec {
 }
 
 func FromOther(o OAuth2) (plugin.Middleware, error) {
-	return New(o.Domain, o.ClientID, o.ClientSecret, o.RedirectURL), nil
+	return New(o.Domain, o.ClientID, o.ClientSecret, o.RedirectURL)
 }
 
 func FromCli(c *cli.Context) (plugin.Middleware, error) {
@@ -37,7 +38,7 @@ func FromCli(c *cli.Context) (plugin.Middleware, error) {
 		c.String("domain"),
 		c.String("clientId"),
 		c.String("clientSecret"),
-		c.String("redirectUrl")), nil
+		c.String("redirectUrl"))
 }
 
 func CliFlags() []cli.Flag {
@@ -50,30 +51,44 @@ func CliFlags() []cli.Flag {
 }
 
 type OAuth2 struct {
+	// Domain holds the authorization servers domain. This can be any OAuth2
+	// compatible server however this plugin has only been tested to work with
+	// Auth0.
 	Domain string
+	// RedirectURLPath holds the URL path of the redirect URL. This path will be
+	// reserved for handling the OAuth2 redirect callback therefore it is
+	// important to use a path that does not conflict with upstream services
+	// routing.
+	RedirectURLPath string
+
 	*oauth2.Config
 }
 
-func New(domain, clientID, clientSecret, redirectURL string) *OAuth2 {
+func New(domain, clientID, clientSecret, redirectURL string) (*OAuth2, error) {
+	u, err := url.Parse(redirectURL)
+	if err != nil {
+		return nil, errors.Wrap(err, "invalid redirectUrl")
+	}
 	return &OAuth2{
-		Domain: domain,
+		Domain:          domain,
+		RedirectURLPath: u.Path,
 		Config: &oauth2.Config{
 			ClientID:     clientID,
 			ClientSecret: clientSecret,
-			RedirectURL:  redirectURL,
+			RedirectURL:  u.String(),
 			Scopes:       []string{"openid", "profile"},
 			Endpoint: oauth2.Endpoint{
 				AuthURL:  "https://" + domain + "/authorize",
 				TokenURL: "https://" + domain + "/oauth/token",
 			},
 		},
-	}
+	}, nil
 }
 
 func (o *OAuth2) NewHandler(next http.Handler) (http.Handler, error) {
 	return context.ClearHandler(&OAuth2Handler{
-		conf: o,
-		next: next,
+		oauth2: o,
+		next:   next,
 	}), nil
 }
 
@@ -88,21 +103,21 @@ func (o *OAuth2) String() string {
 }
 
 type OAuth2Handler struct {
-	conf *OAuth2
-	next http.Handler
+	oauth2 *OAuth2
+	next   http.Handler
 }
 
-func (o *OAuth2Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	if r.URL.Path == "/callback" {
-		o.Callback(w, r)
+func (h *OAuth2Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	if r.URL.Path == h.oauth2.RedirectURLPath {
+		h.Callback(w, r)
 	} else {
-		o.All(w, r)
+		h.All(w, r)
 	}
 }
 
-func (o *OAuth2Handler) Callback(w http.ResponseWriter, r *http.Request) {
+func (h *OAuth2Handler) Callback(w http.ResponseWriter, r *http.Request) {
 
-	t, err := o.conf.Exchange(oauth2.NoContext, r.URL.Query().Get("code"))
+	t, err := h.oauth2.Exchange(oauth2.NoContext, r.URL.Query().Get("code"))
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
@@ -127,10 +142,15 @@ func (o *OAuth2Handler) Callback(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	http.Redirect(w, r, "/", http.StatusTemporaryRedirect)
+	returnTo := "/"
+	if _, ok := s.Values["return_to"]; ok {
+		returnTo = s.Values["return_to"].(string)
+	}
+
+	http.Redirect(w, r, returnTo, http.StatusTemporaryRedirect)
 }
 
-func (o *OAuth2Handler) All(w http.ResponseWriter, r *http.Request) {
+func (h *OAuth2Handler) All(w http.ResponseWriter, r *http.Request) {
 
 	s, err := SessionStore.Get(r, "oauth2-session")
 	if err != nil {
@@ -140,15 +160,22 @@ func (o *OAuth2Handler) All(w http.ResponseWriter, r *http.Request) {
 
 	if _, ok := s.Values["access_token"]; !ok {
 
+		s.Values["return_to"] = r.URL.Path
+
+		if err = s.Save(r, w); err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
+		}
+
 		q := make(url.Values)
-		q.Set("client", o.conf.ClientID)
-		q.Set("redirect_uri", o.conf.RedirectURL)
+		q.Set("client", h.oauth2.ClientID)
+		q.Set("redirect_uri", h.oauth2.RedirectURL)
 		q.Set("protocol", "oauth2")
 		q.Set("response_type", "code")
 
-		http.Redirect(w, r, "https://"+o.conf.Domain+"/login?"+q.Encode(), 302)
+		http.Redirect(w, r, "https://"+h.oauth2.Domain+"/login?"+q.Encode(), 302)
 		return
 	}
 
-	o.next.ServeHTTP(w, r)
+	h.next.ServeHTTP(w, r)
 }

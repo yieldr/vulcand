@@ -1,10 +1,11 @@
 package main
 
 import (
-    log "github.com/sirupsen/logrus"
+	"os"
+
+	log "github.com/sirupsen/logrus"
 	"github.com/vulcand/vulcand/vctl/command"
 	"github.com/yieldr/vulcand/registry"
-	"os"
 )
 
 func main() {
