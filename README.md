@@ -6,9 +6,7 @@ Yieldr's fork of Mailgun's [vulcand](https://github.com/vulcand/vulcand) built u
 
 ## Kubernetes
 
-Typically this project is deployed alongside [romulus](https://github.com/albertrdixon/romulus) as an [Ingress Controller](https://kubernetes.io/docs/concepts/services-networking/ingress/#ingress-controllers).
-
-Please refer to the [romulus wiki](https://github.com/albertrdixon/romulus/wiki/Annotations) for more details.
+Typically this project is deployed alongside [vulcand-ingress](https://github.com/yieldr/vulcand-ingress) or [romulus](https://github.com/albertrdixon/romulus) as an [Ingress Controller](https://kubernetes.io/docs/concepts/services-networking/ingress/#ingress-controllers). See the referring projects for their specific usage examples.
 
 ## Standalone
 
