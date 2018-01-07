@@ -29,8 +29,7 @@ docker-test:
 
 docker-image:
 	@docker build -t $(IMAGE):$(VERSION) .
-	@docker tag -f $(IMAGE):$(VERSION) $(IMAGE):latest
-	@echo " ---> $(IMAGE):$(VERSION)\n ---> $(IMAGE):latest"
+	@docker tag $(IMAGE):$(VERSION) $(IMAGE):latest
 
 docker-push:
 	@docker push $(IMAGE):$(VERSION)
