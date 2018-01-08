@@ -6,7 +6,7 @@ services:
     image: yieldr/debian
     command:
       - vulcand
-      - -logSeverity=DEBUG
+      - -logSeverity=INFO
       - -port=8181
       - -apiInterface=0.0.0.0
       - -apiPort=8182
