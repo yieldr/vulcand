@@ -691,11 +691,11 @@
 			"revisionTime": "2017-09-28T00:25:42Z"
 		},
 		{
-			"checksumSHA1": "vu7njn8O4vhFtmgGWntwjA2NAbk=",
+			"checksumSHA1": "R3D/H/ynstucYzws/eh4e7MVp7U=",
 			"origin": "github.com/vulcand/vulcand/vendor/golang.org/x/sys/unix",
 			"path": "golang.org/x/sys/unix",
-			"revision": "8f0908ab3b2457e2e15403d3697c9ef5cb4b57a9",
-			"revisionTime": "2016-09-14T20:33:16Z"
+			"revision": "65c0f5ebda02f603c784ccdf6c2c556c2f082f67",
+			"revisionTime": "2017-09-30T15:01:53Z"
 		},
 		{
 			"checksumSHA1": "kfslaLecTWjN5Nrm/RqxgwXvgeY=",
