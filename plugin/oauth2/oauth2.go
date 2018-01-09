@@ -55,7 +55,7 @@ func FromOther(o OAuth2) (plugin.Middleware, error) {
 		"issuer_url":    o.IssuerURL,
 		"client_id":     o.ClientID,
 		"client_secret": o.ClientSecret,
-		"redirect_uri":  o.RedirectURL,
+		"redirect_url":  o.RedirectURL,
 	}).Debugf("initializing from json")
 	return New(o.IssuerURL, o.ClientID, o.ClientSecret, o.RedirectURL)
 }
@@ -65,7 +65,7 @@ func FromCli(c *cli.Context) (plugin.Middleware, error) {
 		c.String("issuerUrl"),
 		c.String("clientId"),
 		c.String("clientSecret"),
-		c.String("redirectUri"))
+		c.String("redirectUrl"))
 }
 
 func CliFlags() []cli.Flag {
@@ -73,7 +73,7 @@ func CliFlags() []cli.Flag {
 		cli.StringFlag{Name: "issuerUrl", Usage: "oauth2 idp issuer url"},
 		cli.StringFlag{Name: "clientId", Usage: "oauth2 client id"},
 		cli.StringFlag{Name: "clientSecret", Usage: "oauth2 client secret"},
-		cli.StringFlag{Name: "redirectUri", Usage: "oauth2 redirect uri"},
+		cli.StringFlag{Name: "redirectUrl", Usage: "oauth2 redirect url"},
 	}
 }
 
@@ -82,11 +82,11 @@ type OAuth2 struct {
 	// compatible server however this plugin has only been tested to work with
 	// Auth0.
 	IssuerURL string
-	// RedirectURI holds the URL path of the redirect URL. This path will be
+	// RedirectURLPath holds the URL path of the redirect URL. This path will be
 	// reserved for handling the OAuth2 redirect callback therefore it is
 	// important to use a path that does not conflict with upstream services
 	// routing.
-	RedirectURI string
+	RedirectURLPath string
 
 	*oauth2.Config
 }
@@ -95,24 +95,24 @@ type OAuth2 struct {
 // the arguments to use at your preferred Identity Provider (IdP).
 //
 // This plugin is tested to work with Auth0.
-func New(issuerURL, clientID, clientSecret, redirectURI string) (*OAuth2, error) {
-	// The redirectURI should be stripped from anything that isnt a URL path. So
+func New(issuerURL, clientID, clientSecret, redirectURL string) (*OAuth2, error) {
+	// The redirectURL should be stripped from anything that isnt a URL path. So
 	// we parse it and ignore the rest.
-	u, err := url.Parse(redirectURI)
+	u, err := url.Parse(redirectURL)
 	if err != nil {
 		return nil, errors.Wrap(err, errInvalidRedirect)
 	}
 	// Now configure OAuth2 with the supplied information. Keep in mind that
 	// OAuth2.Config.RedirectURL is not set right now as it will be decided at
-	// run time by OAuth2.RedirectURI plus the request's Hostname if the path is
+	// run time by OAuth2.RedirectURL plus the request's Hostname if the path is
 	// relative.
 	return &OAuth2{
-		IssuerURL:   issuerURL,
-		RedirectURI: u.Path,
+		IssuerURL:       issuerURL,
+		RedirectURLPath: u.Path,
 		Config: &oauth2.Config{
 			ClientID:     clientID,
 			ClientSecret: clientSecret,
-			RedirectURL:  redirectURI,
+			RedirectURL:  redirectURL,
 			Scopes:       []string{"openid", "profile"},
 			Endpoint: oauth2.Endpoint{
 				AuthURL:  issuerURL + "/authorize",
@@ -135,7 +135,7 @@ func (o *OAuth2) NewHandler(next http.Handler) (http.Handler, error) {
 
 func (o *OAuth2) String() string {
 	return fmt.Sprintf(
-		"issuer-url=%s, client-id=%s client-secret=%s redirect-uri=%s",
+		"issuer-url=%s, client-id=%s client-secret=%s redirect-url=%s",
 		o.IssuerURL,
 		o.ClientID,
 		o.ClientSecret,
@@ -149,7 +149,7 @@ type OAuth2Handler struct {
 }
 
 func (h *OAuth2Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	if r.URL.Path == h.oauth2.RedirectURI {
+	if r.URL.Path == h.oauth2.RedirectURLPath {
 		h.Callback(w, r)
 	} else {
 		h.All(w, r)
