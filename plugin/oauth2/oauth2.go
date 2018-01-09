@@ -51,7 +51,12 @@ func GetSpec() *plugin.MiddlewareSpec {
 }
 
 func FromOther(o OAuth2) (plugin.Middleware, error) {
-	logger.WithField("oauth2", o).Debugf("initializing from json")
+	logger.WithFields(logrus.Fields{
+		"issuer_url":    o.IssuerURL,
+		"client_id":     o.ClientID,
+		"client_secret": o.ClientSecret,
+		"redirect_uri":  o.RedirectURL,
+	}).Debugf("initializing from json")
 	return New(o.IssuerURL, o.ClientID, o.ClientSecret, o.RedirectURL)
 }
 
