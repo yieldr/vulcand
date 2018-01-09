@@ -50,7 +50,7 @@ func GetSpec() *plugin.MiddlewareSpec {
 	}
 }
 
-func FromOther(o *OAuth2) (plugin.Middleware, error) {
+func FromOther(o OAuth2) (plugin.Middleware, error) {
 	return New(o.IssuerURL, o.ClientID, o.ClientSecret, o.RedirectURL)
 }
 
