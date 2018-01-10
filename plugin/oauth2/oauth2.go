@@ -11,7 +11,6 @@ import (
 	"github.com/codegangsta/cli"
 	"github.com/gorilla/context"
 	"github.com/gorilla/handlers"
-	"github.com/gorilla/securecookie"
 	"github.com/gorilla/sessions"
 	"github.com/sirupsen/logrus"
 	"github.com/vulcand/vulcand/plugin"
@@ -27,17 +26,15 @@ const (
 	errFailExchangeCode = "failed exchanging oauth2 code for token"
 )
 
-var (
-	// We will store cookies in the users browser to maintain an authenticated
-	// session.
-	sessionStore sessions.Store
+// We will store cookies in the users browser to maintain an authenticated
+// session.
+var sessionStore sessions.Store
 
-	// Define a logger with some default fields used throughout the plugin.
-	logger *logrus.Entry
-)
+// Define a logger with some default fields used throughout the plugin.
+var logger *logrus.Entry
 
 func init() {
-	sessionStore = sessions.NewCookieStore(securecookie.GenerateRandomKey(32))
+	sessionStore = sessions.NewCookieStore([]byte("3nLEgTX5rYviQKH7Oz9XfGr3QiNstY17"))
 	logger = logrus.WithField("plugin", "oauth2")
 }
 
@@ -51,12 +48,6 @@ func GetSpec() *plugin.MiddlewareSpec {
 }
 
 func FromOther(o OAuth2) (plugin.Middleware, error) {
-	logger.WithFields(logrus.Fields{
-		"issuer_url":    o.IssuerURL,
-		"client_id":     o.ClientID,
-		"client_secret": o.ClientSecret,
-		"redirect_url":  o.RedirectURL,
-	}).Debugf("initializing from json")
 	return New(o.IssuerURL, o.ClientID, o.ClientSecret, o.RedirectURL)
 }
 
@@ -148,6 +139,18 @@ type OAuth2Handler struct {
 	next   http.Handler
 }
 
+// ServeHTTP handles the OAuth2 middleware.
+//
+// The middleware silently introduces an additional route which is specified by
+// the RedirectURL property. If the route matches it is assumed that the request
+// was a result of an OAuth2 authentication server redirect and should contain
+// an access code which is to be exchanged with an access token. This token is
+// saved to a cookie for persistence.
+//
+// If the request does *not* match this additional route then the the cookie is
+// checked and if it is valid then the middleware completes by calling the next
+// middleware in the chain. Otherwise the user is redirected to the OAuth2
+// authentication server to authenticate.
 func (h *OAuth2Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Path == h.oauth2.RedirectURLPath {
 		h.Callback(w, r)
@@ -235,6 +238,18 @@ func (h *OAuth2Handler) All(w http.ResponseWriter, r *http.Request) {
 			http.Error(w, errors.Wrap(err, errFailWriteSession).Error(), http.StatusInternalServerError)
 			return
 		}
+
+		// This is a little bit of a hack so we can support arbitrary redirect
+		// URLs. If the RedirectURL is a path we use the current requests Scheme
+		// and Host to create a RedirectURL on the fly.
+		u, _ := url.Parse(h.oauth2.RedirectURL)
+		if u.Host == "" {
+			u.Host = r.URL.Host
+		}
+		if u.Scheme == "" {
+			u.Scheme = r.URL.Scheme
+		}
+		h.oauth2.RedirectURL = u.String()
 
 		http.Redirect(w, r, h.oauth2.AuthCodeURL(state), http.StatusTemporaryRedirect)
 

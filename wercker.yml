@@ -5,13 +5,13 @@ build:
     - setup-go-workspace:
         package-dir: github.com/yieldr/vulcand
     - script:
-        name: go build
+        name: build
         code: |
           make build OS=linux ARCH=amd64
     - script:
-        name: go test
+        name: test
         code: |
-          go test
+          make test
     - script:
         name: copy binaries
         code: |

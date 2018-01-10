@@ -2,6 +2,7 @@ VERSION ?= $(shell git describe --tags --always)
 
 IMAGE = dkr.yldr.io/vulcand
 PKG = github.com/yieldr/vulcand
+PKGS = $(shell go list ./... | grep -v /vendor/)
 
 OS ?= darwin
 ARCH ?= amd64
@@ -9,15 +10,15 @@ ARCH ?= amd64
 GOBUILDFLAGS = -a -tags netgo -ldflags '-w'
 
 build:
-	GOOS=$(OS) GOARCH=$(ARCH) go build -o bin/vulcand $(GOBUILDFLAGS)
-	GOOS=$(OS) GOARCH=$(ARCH) go build -o bin/vctl $(GOBUILDFLAGS) ./vctl
+	@GOOS=$(OS) GOARCH=$(ARCH) go build -o bin/vulcand $(GOBUILDFLAGS)
+	@GOOS=$(OS) GOARCH=$(ARCH) go build -o bin/vctl $(GOBUILDFLAGS) ./vctl
 
 install:
-	go install .
-	go install ./vctl
+	@go install .
+	@go install ./vctl
 
 test:
-	go test
+	@go test $(PKGS)
 
 docker-all: docker-build docker-image docker-push
 

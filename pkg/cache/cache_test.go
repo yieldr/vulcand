@@ -5,16 +5,6 @@ import (
 	"time"
 )
 
-type mockCache struct{}
-
-func (m *mockCache) Set(key string, value interface{}, duration time.Duration) {}
-
-func (m *mockCache) Get(key string) (interface{}, bool) { return nil, false }
-
-func NewMockCache() Cache {
-	return new(mockCache)
-}
-
 func TestCache(t *testing.T) {
 	var found bool
 
