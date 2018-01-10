@@ -239,18 +239,6 @@ func (h *OAuth2Handler) All(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
-		// This is a little bit of a hack so we can support arbitrary redirect
-		// URLs. If the RedirectURL is a path we use the current requests Scheme
-		// and Host to create a RedirectURL on the fly.
-		u, _ := url.Parse(h.oauth2.RedirectURL)
-		if u.Host == "" {
-			u.Host = r.URL.Host
-		}
-		if u.Scheme == "" {
-			u.Scheme = r.URL.Scheme
-		}
-		h.oauth2.RedirectURL = u.String()
-
 		http.Redirect(w, r, h.oauth2.AuthCodeURL(state), http.StatusTemporaryRedirect)
 
 		return
