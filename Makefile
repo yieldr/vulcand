@@ -1,6 +1,6 @@
 VERSION ?= $(shell git describe --tags --always)
 
-IMAGE = dkr.yldr.io/vulcand
+IMAGE = yieldr/vulcand
 PKG = github.com/yieldr/vulcand
 PKGS = $(shell go list ./... | grep -v /vendor/)
 

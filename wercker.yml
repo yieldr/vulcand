@@ -20,6 +20,10 @@ release:
   box: debian:stretch
   steps:
     - script:
+        name: move binaries
+        code: |
+          mv $WERCKER_SOURCE_DIR/* /usr/local/bin
+    - script:
         name: determine docker tag
         code: |
           TAG="$WERCKER_GIT_BRANCH"
@@ -33,7 +37,7 @@ release:
         username: $REGISTRY_USERNAME
         password: $REGISTRY_PASSWORD
         repository: yieldr/vulcand
-        cmd: /vulcand
+        cmd: vulcand
         tag: $TAG
         ports: 8181,8182
         author: $WERCKER_STARTED_BY
