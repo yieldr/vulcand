@@ -17,6 +17,7 @@ build:
         code: |
           cp bin/* $WERCKER_OUTPUT_DIR
 release:
+  box: debian:stretch
   steps:
     - script:
         name: determine docker tag
@@ -28,7 +29,7 @@ release:
             TAG="latest,$(cut -d "/" -f 2 <<< $WERCKER_GIT_BRANCH)"
           fi
           export TAG
-    - internal/docker-scratch-push:
+    - internal/docker-push:
         username: $REGISTRY_USERNAME
         password: $REGISTRY_PASSWORD
         repository: yieldr/vulcand
