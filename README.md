@@ -33,7 +33,7 @@ The following configuration will create a new upstream backend (`nginx`), a serv
 This command will add `oauth2` middleware to the `nginx` frontend.
 
 	vctl oauth2 upsert -f nginx -id nginx-oauth \
-		-domain $AUTH0_DOMAIN \
-		-clientId $AUTH0_CLIENT_ID \
-		-clientSecret $AUTH0_CLIENT_SECRET \
+		-issuerUrl $ISSUER_URL \
+		-clientId $CLIENT_ID \
+		-clientSecret $CLIENT_SECRET \
 		-redirectUrl http://localhost:8181/callback
